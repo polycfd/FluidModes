@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fluidmodes"
+dynamic = ["version"]
+description = "Command-line post-processing for fluid-mechanics modal analysis"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Fabian Denner" }]
+dependencies = ["numpy>=1.23", "Pillow>=9.0", "matplotlib>=3.5", "PyDMD>=2024.8.1", "PySPOD>=2.0,<3"]
+
+[project.urls]
+Repository = "https://github.com/fabiandenner/FluidModes"
+Issues = "https://github.com/fabiandenner/FluidModes/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+fluidmodes = "fluidmodes.cli:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "fluidmodes.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]

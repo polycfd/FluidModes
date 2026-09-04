@@ -1,0 +1,14 @@
+# Downloaded third-party data and the reproducible tabular input.
+data/jetLES.mat
+data/jet_spod.csv
+
+# Independent reference cache, public-CLI output, and official source clone.
+reference/
+results/
+reference_source/
+__pycache__/
+
+# Keep only the two curated public validation figures.
+plots/*
+!plots/spod_spectrum.png
+!plots/spod_modes.png
